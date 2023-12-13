@@ -123,4 +123,14 @@ function displayResult() {
     resultContainer.innerHTML = `You scored ${score} out of ${quizData.length}!`;
 }
 /*retryquiz button end of the game to start over quiz*/
-function retryQuiz() 
+function retryQuiz() {
+    currentQuestion = 0;
+    score = 0;
+    incorrectAnswers = [];
+    quizContainer.style.display = 'block';
+    submitButton.style.display = 'inline-block';
+    retryButton.style.display = 'none';
+    showAnswerButton.style.display = 'none';
+    resultContainer.innerHTML = '';
+    displayQuestion();
+}
