@@ -29,3 +29,7 @@ h1 {
 #retry { 
   background: rgb(227, 10, 10);
 }
+/* showanswer button background color blue*/
+#showAnswer {
+    background: blue;
+}
