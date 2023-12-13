@@ -16,12 +16,16 @@ body {
 h1 {
     color: white;
 }
- /*style for the answer options*/
- #quiz {
+/*style for the answer options*/
+#quiz {
      background-color: rgb(255, 255, 255);
      font-size: x-large;
  }
-  /*submit button yellow background color*/
-  #submit {
+/*submit button yellow background color*/
+#submit {
       background: yellow;
      }
+/*retry button red background color*/
+#retry { 
+  background: rgb(227, 10, 10);
+}
