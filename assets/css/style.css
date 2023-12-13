@@ -12,3 +12,7 @@ body {
     font-size: xx-large;
     /* text size xx-large*/
 }
+/*Header*/
+h1 {
+    color: white;
+}
