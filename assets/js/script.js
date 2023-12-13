@@ -92,7 +92,28 @@ function displayQuestion() {
     quizContainer.appendChild(optionsElement);
 }
 /* check Answer show all incorrect Answer with correct answer*/
-function checkAnswer() 
+function checkAnswer() {
+    const selectedOption = document.querySelector('input[name="quiz"]:checked');
+    if (selectedOption) {
+        const answer = selectedOption.value;
+        if (answer === quizData[currentQuestion].answer) {
+            score++;
+        } else {
+            incorrectAnswers.push({
+                question: quizData[currentQuestion].question,
+                incorrectAnswer: answer,
+                correctAnswer: quizData[currentQuestion].answer,
+            });
+        }
+        currentQuestion++;
+        selectedOption.checked = false;
+        if (currentQuestion < quizData.length) {
+            displayQuestion();
+        } else {
+            displayResult();
+        }
+    }
+}
 /*get score end of game 0-10*/
 function displayResult() 
 /*retryquiz button end of the game to start over quiz*/
