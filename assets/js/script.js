@@ -58,7 +58,39 @@ function shuffleArray(array) {
     }
 }
 /* question with options to submit*/
-function displayQuestion() 
+function displayQuestion() {
+    const questionData = quizData[currentQuestion];
+
+    const questionElement = document.createElement('div');
+    questionElement.className = 'question';
+    questionElement.innerHTML = questionData.question;
+
+    const optionsElement = document.createElement('div');
+    optionsElement.className = 'options';
+
+    const shuffledOptions = [...questionData.options];
+    shuffleArray(shuffledOptions);
+
+    for (let i = 0; i < shuffledOptions.length; i++) {
+        const option = document.createElement('label');
+        option.className = 'option';
+
+        const radio = document.createElement('input');
+        radio.type = 'radio';
+        radio.name = 'quiz';
+        radio.value = shuffledOptions[i];
+
+        const optionText = document.createTextNode(shuffledOptions[i]);
+
+        option.appendChild(radio);
+        option.appendChild(optionText);
+        optionsElement.appendChild(option);
+    }
+
+    quizContainer.innerHTML = '';
+    quizContainer.appendChild(questionElement);
+    quizContainer.appendChild(optionsElement);
+}
 /* check Answer show all incorrect Answer with correct answer*/
 function checkAnswer() 
 /*get score end of game 0-10*/
