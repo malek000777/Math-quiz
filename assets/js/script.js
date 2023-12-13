@@ -40,3 +40,20 @@ const quizData = [{
     options: ['120', '210', '102', '103'],
     answer: '102',
 },];
+/* fixed variable to game*/
+const quizContainer = document.getElementById('quiz');
+const resultContainer = document.getElementById('result');
+const submitButton = document.getElementById('submit');
+const retryButton = document.getElementById('retry');
+const showAnswerButton = document.getElementById('showAnswer');
+
+let currentQuestion = 0;
+let score = 0;
+let incorrectAnswers = [];
+
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
