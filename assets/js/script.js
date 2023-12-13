@@ -57,3 +57,11 @@ function shuffleArray(array) {
         [array[i], array[j]] = [array[j], array[i]];
     }
 }
+/* question with options to submit*/
+function displayQuestion() 
+/* check Answer show all incorrect Answer with correct answer*/
+function checkAnswer() 
+/*get score end of game 0-10*/
+function displayResult() 
+/*retryquiz button end of the game to start over quiz*/
+function retryQuiz() 
