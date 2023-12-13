@@ -1,3 +1,14 @@
-body{
-    background: green;
+body {
+    text-align: center;
+    /* text position in center*/
+    background-color: #055135;
+    /* Green background */
+    border: 5px solid rgb(255, 255, 255);
+    /* Green border */
+    color: rgb(0, 0, 0);
+    /* black text */
+    padding: 50px 0px;
+    /* Some padding */
+    font-size: xx-large;
+    /* text size xx-large*/
 }
