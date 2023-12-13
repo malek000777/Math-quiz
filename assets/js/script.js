@@ -115,6 +115,12 @@ function checkAnswer() {
     }
 }
 /*get score end of game 0-10*/
-function displayResult() 
+function displayResult() {
+    quizContainer.style.display = 'none';
+    submitButton.style.display = 'none';
+    retryButton.style.display = 'inline-block';
+    showAnswerButton.style.display = 'inline-block';
+    resultContainer.innerHTML = `You scored ${score} out of ${quizData.length}!`;
+}
 /*retryquiz button end of the game to start over quiz*/
 function retryQuiz() 
