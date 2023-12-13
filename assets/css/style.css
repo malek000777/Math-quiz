@@ -21,3 +21,7 @@ h1 {
      background-color: rgb(255, 255, 255);
      font-size: x-large;
  }
+  /*submit button yellow background color*/
+  #submit {
+      background: yellow;
+     }
