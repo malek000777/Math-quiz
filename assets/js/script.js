@@ -1,4 +1,4 @@
-/* 10 questions and correct answer */
+/*10 questions and correct answer */
 const quizData = [{
     question: '100 + 60?',
     options: ['187', '160', '190', '178'],
@@ -40,7 +40,7 @@ const quizData = [{
     options: ['120', '210', '102', '103'],
     answer: '102',
 },];
-/* fixed variable to game*/
+/*fixed variable to game*/
 const quizContainer = document.getElementById('quiz');
 const resultContainer = document.getElementById('result');
 const submitButton = document.getElementById('submit');
@@ -57,7 +57,7 @@ function shuffleArray(array) {
         [array[i], array[j]] = [array[j], array[i]];
     }
 }
-/* question with options to submit*/
+/*question with options to submit*/
 function displayQuestion() {
     const questionData = quizData[currentQuestion];
 
@@ -91,7 +91,7 @@ function displayQuestion() {
     quizContainer.appendChild(questionElement);
     quizContainer.appendChild(optionsElement);
 }
-/* check Answer show all incorrect Answer with correct answer*/
+/*check Answer show all incorrect Answer with correct answer*/
 function checkAnswer() {
     const selectedOption = document.querySelector('input[name="quiz"]:checked');
     if (selectedOption) {
@@ -134,3 +134,32 @@ function retryQuiz() {
     resultContainer.innerHTML = '';
     displayQuestion();
 }
+function showAnswer() {
+    quizContainer.style.display = 'none';
+    submitButton.style.display = 'none';
+    retryButton.style.display = 'inline-block';
+    showAnswerButton.style.display = 'none';
+
+    let incorrectAnswersHtml = '';
+    for (let i = 0; i < incorrectAnswers.length; i++) {
+        incorrectAnswersHtml += `
+        <p>
+          <strong>Question:</strong> ${incorrectAnswers[i].question}<br>
+          <strong>Your Answer:</strong> ${incorrectAnswers[i].incorrectAnswer}<br>
+          <strong>Correct Answer:</strong> ${incorrectAnswers[i].correctAnswer}
+        </p>
+      `;
+    }
+
+    resultContainer.innerHTML = `
+      <p>You scored ${score} out of ${quizData.length}!</p>
+      <p>Incorrect Answers:</p>
+      ${incorrectAnswersHtml}
+    `;
+}
+
+submitButton.addEventListener('click', checkAnswer);
+retryButton.addEventListener('click', retryQuiz);
+showAnswerButton.addEventListener('click', showAnswer);
+
+displayQuestion();
